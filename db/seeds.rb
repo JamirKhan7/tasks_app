@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# User.create!(name: "Jamir")
+user = User.first
+
+user.tasks.create!(title: "Learn MVC", description: "Understanding request flow", status: "open")
+user.tasks.create!(title: "Read ActiveRecord", description: "Scopes and Associations", status: "in_progress")
