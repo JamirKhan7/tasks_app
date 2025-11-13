@@ -1,5 +1,5 @@
 class TaskQuery
-  def initialize(relation)
+  def initialize(relation = Task.all)
     @relation = relation
   end
 

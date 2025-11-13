@@ -1,10 +1,11 @@
 class TasksController < ApplicationController
   def index
-    @tasks = TaskQuery.new.filter.recent.includes(:user)
+    @tasks = TaskQuery.new.filter.includes(:user)
   end
 
   def show
-    @task = Task.find(id: params[:id])
+    @task = Task.find(params[:id]) if params[:id].present?
+    @user = @task.user
   end
 
   def create

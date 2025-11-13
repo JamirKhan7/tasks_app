@@ -1,2 +1,21 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h1>New Task</h1>
+<%= form_with model: @task do |f| %>
+  <div class="mt-3">
+    <%= f.label :title, class: "d-block" %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="mt-3">
+    <%= f.label :description, class: "d-block" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="mt-3">
+    <%= f.label :status %>
+    <%= f.select :status, ["open", "in_progress", "done"], include_blank: false %>
+  </div>
+
+  <div class="mt-3">
+    <%= f.submit "Create" %>
+  </div>
+<% end %>
